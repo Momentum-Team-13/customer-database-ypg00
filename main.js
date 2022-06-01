@@ -40,4 +40,5 @@ for (let c of customers) {
     
     // Placing every entry into the "big" div
     customerList.appendChild(customerElement);
+    
 }
