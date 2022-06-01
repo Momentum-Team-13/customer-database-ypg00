@@ -1,7 +1,7 @@
 const customerList = document.getElementById('customers');
 for (let c of customers) {
     
-    // Creating a box for each entry
+    // Creating a box for every customer entry
     let customerElement = document.createElement('div');
     customerElement.classList.add('entry');
 
@@ -24,15 +24,10 @@ for (let c of customers) {
     customerElement.appendChild(customerEmail); // putting email element into the customer element (i.e. .entry)
 
     // Address
-    let customerAddress1 = document.createElement('div');
-    customerAddress1.classList.add('address');
-    customerAddress1.innerText = `${c.location.street.number} ${c.location.street.name}`;
-    customerElement.appendChild(customerAddress1);
-
-    let customerAddress2 = document.createElement('div');
-    customerAddress2.classList.add('address');
-    customerAddress2.innerText = `${c.location.city}, STATE ${c.location.postcode}`;
-    customerElement.appendChild(customerAddress2);
+    let customerAddress = document.createElement('div');
+    customerAddress.classList.add('address');
+    customerAddress.innerText = `${c.location.street.number} ${c.location.street.name} \b\r ${c.location.city}, STATE ${c.location.postcode}`;
+    customerElement.appendChild(customerAddress);
 
     // DOB
 
@@ -40,5 +35,5 @@ for (let c of customers) {
     
     // Placing every entry into the "big" div
     customerList.appendChild(customerElement);
-    
+
 }
