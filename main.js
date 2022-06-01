@@ -1,7 +1,7 @@
 const customerList = document.getElementById('customers');
 for (let c of customers) {
     
-    // Creating a box for every customer entry
+    // Creating a element for every customer entry
     let customerElement = document.createElement('div');
     customerElement.classList.add('entry');
 
@@ -30,10 +30,17 @@ for (let c of customers) {
     customerElement.appendChild(customerAddress);
 
     // DOB
+    let customerDOB = document.createElement('div');
+    customerDOB.classList.add('DOB');
+    customerDOB.innerText = `DOB: ${c.dob.date}`;
+    customerElement.appendChild(customerDOB);
 
     // Registered
+    let customerRegistered = document.createElement('div');
+    customerRegistered.classList.add('registered');
+    customerRegistered.innerText = `Customer Since: ${c.registered.date}`;
+    customerElement.appendChild(customerRegistered);
     
-    // Placing every entry into the "big" div
+    // Placing every entry into the main div
     customerList.appendChild(customerElement);
-
 }
