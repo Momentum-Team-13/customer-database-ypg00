@@ -5,14 +5,14 @@
 
 #customers {
     background-color: aquamarine;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
 }
 
 .entry {
     background-color: blueviolet;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
 }
 
 .img {}
