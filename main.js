@@ -1,5 +1,9 @@
 const customerList = document.getElementById('customers');
+
 for (let c of customers) {
+    // import moment from 'moment';
+    // moment().format();
+    let moment = require('moment');
     
     // Creating a element for every customer entry
     let customerElement = document.createElement('div');
@@ -18,10 +22,10 @@ for (let c of customers) {
     customerElement.appendChild(customerName);
 
     // Email
-    let customerEmail = document.createElement('div'); // creating element
-    customerEmail.classList.add('email'); // add a class to the element
-    customerEmail.innerText = c.email; // filling the element with innerText
-    customerElement.appendChild(customerEmail); // putting email element into the customer element (i.e. .entry)
+    let customerEmail = document.createElement('div');
+    customerEmail.classList.add('email');
+    customerEmail.innerText = c.email;
+    customerElement.appendChild(customerEmail);
 
     // Address
     let customerAddress = document.createElement('div');
@@ -31,14 +35,14 @@ for (let c of customers) {
 
     // DOB
     let customerDOB = document.createElement('div');
-    customerDOB.classList.add('DOB');
-    customerDOB.innerText = `DOB: ${c.dob.date}`;
+    customerDOB.classList.add('dob');
+    customerDOB.innerText = `DOB: ${moment(c.dob.date).format('ll')}`;
     customerElement.appendChild(customerDOB);
 
     // Registered
     let customerRegistered = document.createElement('div');
     customerRegistered.classList.add('registered');
-    customerRegistered.innerText = `Customer Since: ${c.registered.date}`;
+    customerRegistered.innerText = `Customer Since: ${moment(c.registered.date).format('ll')}`;
     customerElement.appendChild(customerRegistered);
     
     // Placing every entry into the main div
